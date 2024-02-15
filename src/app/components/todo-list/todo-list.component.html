@@ -1,0 +1,21 @@
+<main class="main">
+  <section class="input-task-container">
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>Tarefa</mat-label>
+        <input matInput placeholder="Tarefa" class="input-task" [(ngModel)]="inputValue">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="addTask(inputValue)">Adicionar Tarefa</button>
+    </div>
+
+  </section>
+  <mat-divider></mat-divider>
+  <section class="load-task-container">
+    <div class="task-name" *ngFor="let task of taskList">
+      <span>{{task}}</span>
+      <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="removeTask(task)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </section>
+</main>
